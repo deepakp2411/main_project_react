@@ -4,6 +4,10 @@ const port = process.env.PORT || 8050;
 
 const web  = require('./routes/web.js')
 
+// static files 
+
+app.use(express.static('public'))
+
 app.use('/',web)
 
 
