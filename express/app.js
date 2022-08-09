@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8050;
 
-const student = require('./routes/student.js')
+const web  = require('./routes/web.js')
 
-app.use('/student',student)
+app.use('/',web)
+
+
+// const student = require('./routes/student.js')
+
+// app.use('/student',student)
 
 
 
