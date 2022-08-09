@@ -5,10 +5,22 @@ const path = require('path')
 
 const web  = require('./routes/web.js')
 
+// setup ejs 
+
+// app.set('views','./views')
+
+app.set('view engine', 'ejs')
+
+// <--------------------------------------------------------------------------------------------->
+
 // static files 
 
 // app.use(express.static('public'))
 app.use(express.static(path.join(__dirname,'public')))
+
+// use single file 
+
+
 
 app.use('/',web)
 
