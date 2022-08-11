@@ -30,7 +30,11 @@ const studentModel = mongoose.model("student", studentSchema);
 const getAllDoc = async () => {
 //   const result = await studentModel.find().select('name age');
 //   const result = await studentModel.find().select(['name','age']);   include 
-  const result = await studentModel.find().select(['-name','-age']);   // Exclude 
+  // const result = await studentModel.find().select(['-name','-age']);   // Exclude 
+  // const result = await studentModel.find().skip(1);   // skip
+  // const result = await studentModel.find().countDocuments();   // countdocs
+  // const result = await studentModel.find({age: {$gt: 20}});   // comparison greater than
+  const result = await studentModel.find({age: {$lt: 25}});   // comparison less than
   console.log(result);
 //   result.forEach((item) => {
 //     console.log(item.name,item.age,item.fees.toString())
